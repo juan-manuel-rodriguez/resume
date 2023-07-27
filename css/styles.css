@@ -9198,10 +9198,6 @@ fieldset:disabled .btn {
     border-radius: var(--bs-border-radius-2xl) !important;
 }
 
-.rounded-circle {
-    border-radius: 50% !important;
-}
-
 .rounded-pill {
     border-radius: var(--bs-border-radius-pill) !important;
 }
@@ -12719,6 +12715,10 @@ section.resume-section .resume-section-content {
     color: #495057;
 }
 
+.img-profile-print-container {
+    display: none;
+}
+
 @media print {
     * {
         font-size: 95%;
@@ -12788,4 +12788,14 @@ section.resume-section .resume-section-content {
     }
 
     .page-break { page-break-before: always; }
+
+    .img-profile-print-container {
+        display: inline-flex;
+    }
+    
+    .img-profile-print {
+        max-width: 10rem;
+        max-height: 10rem;
+        border: 0.5rem solid var(--bs-primary);
+    }
 }
