@@ -8,6 +8,10 @@
     <meta name="author" content=""/>
     <title>Juan Manuel</title>
     <link rel="icon" type="image/x-icon" href="assets/img/uruguay.ico"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
+    <!-- JsPDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -42,11 +46,13 @@
     <!-- About-->
     <section class="resume-section" id="about">
         <div class="resume-section-content">
-            <div class="row">
-                <div class="col-md-2 col-sm-4 img-profile-print-container">
-                    <img class="img-fluid img-profile mx-auto img-profile-print" src="assets/img/profile.jpg"/>
+            <div class="row img-profile-print-container">
+                <div class="text-center">
+                    <img class="img-fluid img-profile img-profile-print" src="assets/img/profile.jpg"/>
                 </div>
-                <div class="col-md-10 col-sm-8 mb-2">
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-sm-8 mb-2 full-width-print">
                     <h2 class="mb-0">
                         Juan Manuel
                         <span class="text-primary">Rodríguez</span>
@@ -55,13 +61,12 @@
                         Montevideo, Uruguay · (+598) 98-23-00-13 ·
                         <a href="mailto:juanm.rodriguez2@gmail.com">juanm.rodriguez2@gmail.com</a>
                     </div>
-                    <p class="lead mb-5">Boasting 15 years in the software industry, with 9 as a tech lead and 2 as a
-                        solution
-                        architect, I persistently guide my team to achieve project and company goals. My commitment
-                        involves
-                        staying abreast of cutting-edge technologies and trends, fostering team motivation and
-                        communication,
-                        and consistently placing emphasis on the highest quality output.</p>
+                    <p class="lead mb-5">With a robust 15-year tenure in the software industry, including 9 years as a
+                        Tech Lead / Principal Developer and 2 years as a Solutions Architect, I adeptly steer my team
+                        towards the successful accomplishment of both project and organizational objectives. My approach
+                        is anchored in maintaining up-to-date knowledge of the latest technological advancements and
+                        trends, nurturing team motivation and effective communication, and unwaveringly prioritizing
+                        top-tier quality in all deliverables.</p>
                     <div class="social-icons">
                         <a class="social-icon"
                            href="https://www.linkedin.com/in/juan-manuel-rodr%C3%ADguez-fern%C3%A1ndez-82945a51"
@@ -89,7 +94,8 @@
                 <div class="col-md-6 mb-4">
                     <h3>Backend</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">5 years using Node.js, to build microservices and aws lambdas.
+                        <li class="list-group-item">Expert in <b>Node.js</b> with 5 years of experience, specializing in
+                            building microservices, and implementing serverless and event-driven architectures.
                         </li>
                         <li class="list-group-item">8 years using JAVA my last experience was with
                             Spring framework to build microservices.
@@ -99,8 +105,8 @@
                 <div class="col-md-6 mb-4">
                     <h3>Frontend</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">5 years using React.js, my last experience was
-                            using Chakra and next.js.
+                        <li class="list-group-item">As an expert with 5 years of experience in <b>React.js</b>, my most
+                            recent projects have prominently featured Chakra UI and Next.js.
                         </li>
                         <li class="list-group-item">3 years using Angular, also using typescript
                             CSS3, HTML5, i18n, redux, material.
@@ -111,31 +117,35 @@
                     <h3>Relational Databases</h3>
                     <ul class="list-group">
                         <li class="list-group-item">MySQL, Oracle, Informix, Sybase ASE SQL, SQL Anywhere,
-                            PostgreSQL, Microsoft SQL.
+                            <b>PostgreSQL</b>, Microsoft SQL.
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6 mb-4">
                     <h3>Non-relational Databases</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">MongoDB, Firebase, Redis (for cache), Elastic search (for
+                        <li class="list-group-item"><b>DynamoDB</b>, <b>MongoDB</b>, <b>Firebase</b>, Redis (for cache),
+                            Elastic search (for
                             log and audit with Kibana).
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="row">
+                <div class="page-break"></div>
                 <div class="col-md-6 mb-4">
                     <h3>Cloud</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">2 years of experience with AWS instances.</li>
-                        <li class="list-group-item">2 years of experience with Google cloud.</li>
+                        <li class="list-group-item">4 years of comprehensive experience with a wide range of <b>AWS</b>
+                            services and products, demonstrating versatility and depth in cloud solutions.
+                        </li>
+                        <li class="list-group-item">2 years of practical experience utilizing various <b>GCP</b> (Google
+                            Cloud Platform) services, showcasing a growing expertise in cloud-based solutions.
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-6 mb-4">
                     <h3>Leadership</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">I've been a tech lead for 9 years in all that time I tried
+                        <li class="list-group-item">I've been a Tech Lead / Principal developer for 9 years in all that time I tried
                             to improve my performance and understand the best strategies to lead a team.
                         </li>
                     </ul>
@@ -144,17 +154,15 @@
                     <h3>Languages</h3>
                     <ul class="list-group">
                         <li class="list-group-item">Spanish: Native language.</li>
-                        <li class="list-group-item">English: I hold advanced proficiency in English. Recently, I worked
-                            for a US-based company where I engaged effectively with a team comprised entirely of native
-                            English speakers in my latest project.
+                        <li class="list-group-item">English: I exhibit advanced proficiency in English, honed over the
+                            last 3 years through effective collaboration with native English speakers across various
+                            US-based companies.
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <hr class="m-0"/>
-    <div class="page-break"></div>
     <!-- Experience-->
     <section class="resume-section" id="experience">
         <div class="resume-section-content">
@@ -163,18 +171,18 @@
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Senior Fullstack Engineer</h3>
                     <div class="subheading mb-3">Mesh.id</div>
-                    <p>Since May 2023, I have been working as a Senior Fullstack Software Developer. I was assigned to a
+                    <p>Since May <b>2023</b>, I have been working as a Senior Fullstack Software Developer. I was assigned to a
                         licensing validation project that leverages AWS Lambda services, using React.js for the
                         front-end and DynamoDB for database management.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2022 - 2023</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2023 - </span></div>
             </div>
 
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Senior Fullstack Engineer</h3>
                     <div class="subheading mb-3">Fluxon</div>
-                    <p>From April 2022 to May 2023, I served as a Senior Software Developer. Initially, I was assigned
+                    <p>From April <b>2022</b> to May <b>2023</b>, I served as a Senior Software Developer. Initially, I was assigned
                         to a
                         Blockchain and Solana's based project called Taki. This donation-centered social network is
                         housed
@@ -188,27 +196,26 @@
                         Next.js, and React.js for a user interface compatible with both tablets (running inside an
                         Android WebView) and web.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2022 - 2023</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2022 - 2023</span></div>
             </div>
-
+            <div class="page-break"></div>
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Tech Lead Consultant</h3>
                     <div class="subheading mb-3">Booster Software</div>
-                    <p>From April 2021 to April 2022, I served as a Tech Lead Consultant (as a contractor) for Bamboo
+                    <p>From April <b>2021</b> to April <b>2022</b>, I served as a Tech Lead Consultant (as a contractor) for Bamboo
                         Payment Systems, contributing to two of their main products: a payment gateway and a checkout
                         payment module. These projects were based on Node.js microservices, PostgreSQL databases, and a
                         front-end developed with React.js. Additionally, I was responsible for third-party integrations
                         of the gateway, including eCommerce platforms like VTEX, WIX, WooCommerce, and Shopify.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2021 - 2022</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2021 - 2022</span></div>
             </div>
-
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Tech Lead</h3>
                     <div class="subheading mb-3">BBVA</div>
-                    <p>From October 2019 to April 2021, I held the position of Tech Lead at BBVA Uruguay, working on the
+                    <p>From October <b>2019</b> to April <b>2021</b>, I held the position of Tech Lead at BBVA Uruguay, working on the
                         most strategic projects. One of my key contributions was leading the development of a new Back
                         Office application. This solution, designed to manage customer sensitive documentation, was
                         implemented using Java Spring microservices, a React.js front-end, and an IBM DB2
@@ -219,14 +226,14 @@
                         transactional features, utilizing a tech stack of React Native, Java Spring microservices, and
                         DB2 for the database.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2019 - 2021</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2019 - 2021</span></div>
             </div>
 
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Tech Lead and Solutions Architect</h3>
                     <div class="subheading mb-3">2InnovateIT</div>
-                    <p>From August 2018 to October 2020, I served as a Tech Lead and Solutions Architect at 2innovateIT.
+                    <p>From August <b>2018</b> to October <b>2020</b>, I served as a Tech Lead and Solutions Architect at 2innovateIT.
                         Specializing in the financial sector, I spearheaded three key projects for our main client in
                         Mexico, Banco Sabadell, related to the transactional engine and Back Office operations.
                         Simultaneously, as the technical area leader, I invested time in defining the strategies for the
@@ -235,14 +242,15 @@
                         microservices, and PostgreSQL.
                     </p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2018 - 2019</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2018 - 2019</span></div>
             </div>
 
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Tech Lead</h3>
                     <div class="subheading mb-3">Infocorp</div>
-                    <p>From December 2015 to August 2018, I served as a Tech Lead on home and corporate banking solution
+                    <p>From December <b>2015</b> to August <b>2018</b>, I served as a Tech Lead on home and corporate
+                        banking solution
                         projects. Initially, I was part of the product team responsible for developing the base solution
                         for all projects. My tenure coincided with the product upgrade process, which included migrating
                         the front-end from .Aspx to Angular2, while maintaining the .NET backend.
@@ -252,15 +260,20 @@
                         Republic Bank project in Trinidad and Tobago. However, I was unable to see this project to its
                         conclusion as I left the company to embark on a new venture.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2015 - 2018</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2015 - 2018</span></div>
             </div>
 
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Tech Lead and Solutions Architect</h3>
                     <div class="subheading mb-3">2InnovateIT</div>
-                    <p>From June 2014 to December 2015, after 2InnovateIT separated from the Axxiome group, I continued
-                        in my previous role but with expanded responsibilities. These included designing architectural
+                    <p>From Janury <b>2012</b> to December <b>2015</b>, I held the position of Tech Lead Consultant
+                        within the banking
+                        and financial mobility team. Our focus was on developing web and mobile solutions for financial
+                        institutions, targeted at their clients and employees. Notably, I was involved in the Sybase 365
+                        Mobiliser project (a mobile wallet).
+                        After the mentioned project I continued in my previous role but with expanded responsibilities.
+                        These included designing architectural
                         solutions for new products, conducting research, and providing support for existing projects
                         with our primary client, TODO1 Services.
 
@@ -269,41 +282,24 @@
                         implement a new solution for financial institutions. The primary tech stack for these projects
                         included Java, JQuery, JQuery Mobile, and Android.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2014 - 2015</span></div>
-            </div>
-
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="flex-grow-1">
-                    <h3 class="mb-0">Tech Lead Consultant</h3>
-                    <div class="subheading mb-3">Axxiome-2InnovateIT</div>
-                    <p>From January 2012 to June 2014, I held the position of Tech Lead Consultant within the banking
-                        and financial mobility team. Our focus was on developing web and mobile solutions for financial
-                        institutions, targeted at their clients and employees. Notably, I was involved in the Sybase 365
-                        Mobiliser project (a mobile wallet).
-                        This project consisted of a Java-based financial core (utilizing OSGi, Spring, and Hibernate)
-                        and an Oracle database. The solution was implemented as a RESTful/SOAP API to be consumed
-                        through various channels - web (Wicket), mobile (Android and iOS), and SMS. My responsibilities
-                        spanned all stages of development, including design and quality control of deliverables.</p>
-                </div>
-                <div class="flex-shrink-0"><span class="text-primary">2012 - 2014</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2012 - 2015</span></div>
             </div>
 
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Software Developer and Tester</h3>
                     <div class="subheading mb-3">IPCOM SA</div>
-                    <p>From February 2009 to December 2011, I engaged in software design, development, and testing for
+                    <p>From February <b>2009</b> to December <b>2011</b>, I engaged in software design, development, and testing for
                         telecommunications projects tailored to mobile phone companies. These projects targeted the
                         implementation of solutions for sales services and fundamental telephony services, utilizing C++
                         for development.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">2009 - 2011</span></div>
+                <div class="flex-shrink-0 d-print-none"><span class="text-primary">2009 - 2011</span></div>
             </div>
 
 
         </div>
     </section>
-    <hr class="m-0"/>
     <!-- Education-->
     <section class="resume-section" id="education">
         <div class="resume-section-content">
